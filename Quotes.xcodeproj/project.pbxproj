@@ -8,12 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		012666A81DE767250045EF97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666A71DE767250045EF97 /* AppDelegate.swift */; };
-		012666AA1DE767250045EF97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666A91DE767250045EF97 /* ViewController.swift */; };
 		012666AD1DE767250045EF97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012666AB1DE767250045EF97 /* Main.storyboard */; };
 		012666AF1DE767250045EF97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012666AE1DE767250045EF97 /* Assets.xcassets */; };
 		012666B21DE767250045EF97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012666B01DE767250045EF97 /* LaunchScreen.storyboard */; };
 		012666BD1DE767250045EF97 /* QuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666BC1DE767250045EF97 /* QuotesTests.swift */; };
 		012666C81DE767250045EF97 /* QuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666C71DE767250045EF97 /* QuotesUITests.swift */; };
+		012666D61DE769310045EF97 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012666D51DE769310045EF97 /* Starscream.framework */; };
+		012666D71DE769310045EF97 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 012666D51DE769310045EF97 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		012666DD1DE77C4B0045EF97 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666DC1DE77C4B0045EF97 /* Symbol.swift */; };
+		012666DF1DE7927A0045EF97 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012666DE1DE7927A0045EF97 /* Unbox.framework */; };
+		012666E01DE7927A0045EF97 /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 012666DE1DE7927A0045EF97 /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		012666E21DE798B10045EF97 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E11DE798B10045EF97 /* SettingsController.swift */; };
+		012666E41DE79BCA0045EF97 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E31DE79BCA0045EF97 /* StorageService.swift */; };
+		012666E61DE79E8B0045EF97 /* StartupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E51DE79E8B0045EF97 /* StartupService.swift */; };
+		012666E81DE832420045EF97 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E71DE832420045EF97 /* SocketManager.swift */; };
+		012666EA1DE832900045EF97 /* SocketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E91DE832900045EF97 /* SocketListener.swift */; };
+		012666EC1DE833360045EF97 /* SocketRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666EB1DE833360045EF97 /* SocketRequests.swift */; };
+		012666EF1DE833CE0045EF97 /* Tick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666EE1DE833CE0045EF97 /* Tick.swift */; };
+		012666F41DE834A30045EF97 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F31DE834A30045EF97 /* SubscriptionService.swift */; };
+		012666F71DE835070045EF97 /* SocketResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F61DE835070045EF97 /* SocketResponses.swift */; };
+		012666FB1DE835EF0045EF97 /* ResponseParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666FA1DE835EF0045EF97 /* ResponseParsers.swift */; };
+		012666FD1DE87F910045EF97 /* TicksParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666FC1DE87F900045EF97 /* TicksParser.swift */; };
+		012667011DE890A00045EF97 /* TickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667001DE890A00045EF97 /* TickCell.swift */; };
+		012667031DE8938A0045EF97 /* QuotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667021DE8938A0045EF97 /* QuotesController.swift */; };
+		012667051DE89F890045EF97 /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667041DE89F890045EF97 /* StartupController.swift */; };
+		012667091DE8A41E0045EF97 /* SymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667081DE8A41E0045EF97 /* SymbolCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +52,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		012666D81DE769310045EF97 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				012666D71DE769310045EF97 /* Starscream.framework in Embed Frameworks */,
+				012666E01DE7927A0045EF97 /* Unbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		012666A41DE767250045EF97 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012666A71DE767250045EF97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		012666A91DE767250045EF97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		012666AC1DE767250045EF97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		012666AE1DE767250045EF97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012666B11DE767250045EF97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +80,24 @@
 		012666C31DE767250045EF97 /* QuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		012666C71DE767250045EF97 /* QuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesUITests.swift; sourceTree = "<group>"; };
 		012666C91DE767250045EF97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		012666D51DE769310045EF97 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		012666DC1DE77C4B0045EF97 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		012666DE1DE7927A0045EF97 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
+		012666E11DE798B10045EF97 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		012666E31DE79BCA0045EF97 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		012666E51DE79E8B0045EF97 /* StartupService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupService.swift; sourceTree = "<group>"; };
+		012666E71DE832420045EF97 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		012666E91DE832900045EF97 /* SocketListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketListener.swift; sourceTree = "<group>"; };
+		012666EB1DE833360045EF97 /* SocketRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketRequests.swift; sourceTree = "<group>"; };
+		012666EE1DE833CE0045EF97 /* Tick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tick.swift; sourceTree = "<group>"; };
+		012666F31DE834A30045EF97 /* SubscriptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
+		012666F61DE835070045EF97 /* SocketResponses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketResponses.swift; sourceTree = "<group>"; };
+		012666FA1DE835EF0045EF97 /* ResponseParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParsers.swift; sourceTree = "<group>"; };
+		012666FC1DE87F900045EF97 /* TicksParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicksParser.swift; sourceTree = "<group>"; };
+		012667001DE890A00045EF97 /* TickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickCell.swift; path = ../TickCell.swift; sourceTree = "<group>"; };
+		012667021DE8938A0045EF97 /* QuotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesController.swift; sourceTree = "<group>"; };
+		012667041DE89F890045EF97 /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
+		012667081DE8A41E0045EF97 /* SymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012666D61DE769310045EF97 /* Starscream.framework in Frameworks */,
+				012666DF1DE7927A0045EF97 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +130,8 @@
 		0126669B1DE767250045EF97 = {
 			isa = PBXGroup;
 			children = (
+				012666DE1DE7927A0045EF97 /* Unbox.framework */,
+				012666D51DE769310045EF97 /* Starscream.framework */,
 				012666A61DE767250045EF97 /* Quotes */,
 				012666BB1DE767250045EF97 /* QuotesTests */,
 				012666C61DE767250045EF97 /* QuotesUITests */,
@@ -97,11 +152,15 @@
 		012666A61DE767250045EF97 /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				012666F01DE8340E0045EF97 /* Services */,
+				012666ED1DE833530045EF97 /* Network */,
+				012666DB1DE77C230045EF97 /* Models */,
+				012667061DE8A3CB0045EF97 /* Controllers */,
+				012667071DE8A3EA0045EF97 /* Cells */,
 				012666A71DE767250045EF97 /* AppDelegate.swift */,
-				012666A91DE767250045EF97 /* ViewController.swift */,
 				012666AB1DE767250045EF97 /* Main.storyboard */,
-				012666AE1DE767250045EF97 /* Assets.xcassets */,
 				012666B01DE767250045EF97 /* LaunchScreen.storyboard */,
+				012666AE1DE767250045EF97 /* Assets.xcassets */,
 				012666B31DE767250045EF97 /* Info.plist */,
 			);
 			path = Quotes;
@@ -125,6 +184,65 @@
 			path = QuotesUITests;
 			sourceTree = "<group>";
 		};
+		012666DB1DE77C230045EF97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				012666DC1DE77C4B0045EF97 /* Symbol.swift */,
+				012666EE1DE833CE0045EF97 /* Tick.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		012666ED1DE833530045EF97 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				012666F91DE835CE0045EF97 /* Parsers */,
+				012666EB1DE833360045EF97 /* SocketRequests.swift */,
+				012666E91DE832900045EF97 /* SocketListener.swift */,
+				012666E71DE832420045EF97 /* SocketManager.swift */,
+				012666F61DE835070045EF97 /* SocketResponses.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		012666F01DE8340E0045EF97 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				012666E51DE79E8B0045EF97 /* StartupService.swift */,
+				012666E31DE79BCA0045EF97 /* StorageService.swift */,
+				012666F31DE834A30045EF97 /* SubscriptionService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		012666F91DE835CE0045EF97 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				012666FA1DE835EF0045EF97 /* ResponseParsers.swift */,
+				012666FC1DE87F900045EF97 /* TicksParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		012667061DE8A3CB0045EF97 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				012667041DE89F890045EF97 /* StartupController.swift */,
+				012667021DE8938A0045EF97 /* QuotesController.swift */,
+				012666E11DE798B10045EF97 /* SettingsController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		012667071DE8A3EA0045EF97 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				012667001DE890A00045EF97 /* TickCell.swift */,
+				012667081DE8A41E0045EF97 /* SymbolCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +253,7 @@
 				012666A01DE767250045EF97 /* Sources */,
 				012666A11DE767250045EF97 /* Frameworks */,
 				012666A21DE767250045EF97 /* Resources */,
+				012666D81DE769310045EF97 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +312,7 @@
 				TargetAttributes = {
 					012666A31DE767250045EF97 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Z9M6HHT44J;
 						ProvisioningStyle = Automatic;
 					};
 					012666B71DE767250045EF97 = {
@@ -259,8 +379,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				012666AA1DE767250045EF97 /* ViewController.swift in Sources */,
+				012666EF1DE833CE0045EF97 /* Tick.swift in Sources */,
+				012666F41DE834A30045EF97 /* SubscriptionService.swift in Sources */,
+				012666E21DE798B10045EF97 /* SettingsController.swift in Sources */,
+				012666EC1DE833360045EF97 /* SocketRequests.swift in Sources */,
+				012666FD1DE87F910045EF97 /* TicksParser.swift in Sources */,
+				012667031DE8938A0045EF97 /* QuotesController.swift in Sources */,
+				012666E81DE832420045EF97 /* SocketManager.swift in Sources */,
+				012667051DE89F890045EF97 /* StartupController.swift in Sources */,
+				012666DD1DE77C4B0045EF97 /* Symbol.swift in Sources */,
+				012666E61DE79E8B0045EF97 /* StartupService.swift in Sources */,
+				012667011DE890A00045EF97 /* TickCell.swift in Sources */,
 				012666A81DE767250045EF97 /* AppDelegate.swift in Sources */,
+				012667091DE8A41E0045EF97 /* SymbolCell.swift in Sources */,
+				012666F71DE835070045EF97 /* SocketResponses.swift in Sources */,
+				012666FB1DE835EF0045EF97 /* ResponseParsers.swift in Sources */,
+				012666E41DE79BCA0045EF97 /* StorageService.swift in Sources */,
+				012666EA1DE832900045EF97 /* SocketListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +547,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z9M6HHT44J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Quotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsopin.Quotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +565,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z9M6HHT44J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Quotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsopin.Quotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,6 +652,7 @@
 				012666CE1DE767250045EF97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		012666CF1DE767250045EF97 /* Build configuration list for PBXNativeTarget "QuotesTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +661,7 @@
 				012666D11DE767250045EF97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		012666D21DE767250045EF97 /* Build configuration list for PBXNativeTarget "QuotesUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +670,7 @@
 				012666D41DE767250045EF97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
