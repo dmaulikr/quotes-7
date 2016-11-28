@@ -1,15 +1,10 @@
-//
-//  ResponseParsers.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
 import Unbox
 
 
+/* 
+    Parsers for all kinds of socket responses.
+*/
 extension SubscribeResponse: Unboxable {
     init(unboxer: Unboxer) throws {
         self.ticksResponse = try unboxer.unbox(key: "subscribed_list")

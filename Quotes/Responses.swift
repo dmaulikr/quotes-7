@@ -1,14 +1,10 @@
-//
-//  SocketResponse.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
 import Unbox
 
+
+/* 
+    Socket response models.
+*/
 struct TicksResponse {
     let ticks: [Tick]
 }

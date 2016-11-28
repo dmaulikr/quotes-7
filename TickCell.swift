@@ -1,11 +1,3 @@
-//
-//  TickCell.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import UIKit
 
 struct TickCellData {
@@ -36,4 +28,5 @@ class TickCell: UITableViewCell {
         self.bidAskLabel.text = data.bidAsk
         self.spreadLabel.text = data.spread
     }
+
 }

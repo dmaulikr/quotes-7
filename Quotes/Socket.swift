@@ -1,17 +1,13 @@
-//
-//  SocketManager.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
 import Starscream
 
-/* Wrapper class for Starscream socket with added Pub/Sub functionality */
-class SocketManager: WebSocketDelegate {
+
+/* 
+    Wrapper class for Starscream socket with added Pub/Sub functionality 
+*/
+class Socket: WebSocketDelegate {
     
     /* Singleton */
-    static let instance = SocketManager(url: URL(string: "wss://quotes.exness.com:18400/")!)
+    static let instance = Socket(url: Host.production.url)
     
     private let socket: WebSocket
     
@@ -44,12 +40,13 @@ class SocketManager: WebSocketDelegate {
     }
     
     func websocketDidConnect(socket: WebSocket) {
-        listeners.forEach { $0.managerDidConnected() }
+        listeners.forEach { $0.socketDidConnected() }
     }
     
     func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        /* Simple failover mechanism */
         if error != nil { DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.connect(); } }
-        listeners.forEach { $0.managerDidDisconnected(error: error) }
+        listeners.forEach { $0.socketDidDisconnected(error: error) }
     }
     
     func websocketDidReceiveMessage(socket: WebSocket, text: String) {

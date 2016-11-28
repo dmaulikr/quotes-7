@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011DC5F11DEB89B20092BDCA /* ScrollableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5F01DEB89B20092BDCA /* ScrollableGraphView.swift */; };
+		011DC5F51DEB8C7E0092BDCA /* GraphController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5F41DEB8C7E0092BDCA /* GraphController.swift */; };
+		011DC5F81DEC452A0092BDCA /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5F71DEC452A0092BDCA /* Host.swift */; };
+		011DC5FD1DECD9180092BDCA /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5FC1DECD9180092BDCA /* Throttler.swift */; };
+		011DC6011DECEE390092BDCA /* Delayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC6001DECEE390092BDCA /* Delayer.swift */; };
 		012666A81DE767250045EF97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666A71DE767250045EF97 /* AppDelegate.swift */; };
 		012666AD1DE767250045EF97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012666AB1DE767250045EF97 /* Main.storyboard */; };
 		012666AF1DE767250045EF97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012666AE1DE767250045EF97 /* Assets.xcassets */; };
@@ -21,16 +26,16 @@
 		012666E21DE798B10045EF97 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E11DE798B10045EF97 /* SettingsController.swift */; };
 		012666E41DE79BCA0045EF97 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E31DE79BCA0045EF97 /* StorageService.swift */; };
 		012666E61DE79E8B0045EF97 /* StartupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E51DE79E8B0045EF97 /* StartupService.swift */; };
-		012666E81DE832420045EF97 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E71DE832420045EF97 /* SocketManager.swift */; };
+		012666E81DE832420045EF97 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E71DE832420045EF97 /* Socket.swift */; };
 		012666EA1DE832900045EF97 /* SocketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666E91DE832900045EF97 /* SocketListener.swift */; };
-		012666EC1DE833360045EF97 /* SocketRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666EB1DE833360045EF97 /* SocketRequests.swift */; };
+		012666EC1DE833360045EF97 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666EB1DE833360045EF97 /* Requests.swift */; };
 		012666EF1DE833CE0045EF97 /* Tick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666EE1DE833CE0045EF97 /* Tick.swift */; };
-		012666F41DE834A30045EF97 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F31DE834A30045EF97 /* SubscriptionService.swift */; };
-		012666F71DE835070045EF97 /* SocketResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F61DE835070045EF97 /* SocketResponses.swift */; };
+		012666F41DE834A30045EF97 /* TicksListeningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F31DE834A30045EF97 /* TicksListeningService.swift */; };
+		012666F71DE835070045EF97 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F61DE835070045EF97 /* Responses.swift */; };
 		012666FB1DE835EF0045EF97 /* ResponseParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666FA1DE835EF0045EF97 /* ResponseParsers.swift */; };
 		012666FD1DE87F910045EF97 /* TicksParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666FC1DE87F900045EF97 /* TicksParser.swift */; };
 		012667011DE890A00045EF97 /* TickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667001DE890A00045EF97 /* TickCell.swift */; };
-		012667031DE8938A0045EF97 /* QuotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667021DE8938A0045EF97 /* QuotesController.swift */; };
+		012667031DE8938A0045EF97 /* TicksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667021DE8938A0045EF97 /* TicksController.swift */; };
 		012667051DE89F890045EF97 /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667041DE89F890045EF97 /* StartupController.swift */; };
 		012667091DE8A41E0045EF97 /* SymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667081DE8A41E0045EF97 /* SymbolCell.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		011DC5F01DEB89B20092BDCA /* ScrollableGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphView.swift; sourceTree = "<group>"; };
+		011DC5F41DEB8C7E0092BDCA /* GraphController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphController.swift; sourceTree = "<group>"; };
+		011DC5F71DEC452A0092BDCA /* Host.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		011DC5FC1DECD9180092BDCA /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		011DC6001DECEE390092BDCA /* Delayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delayer.swift; sourceTree = "<group>"; };
 		012666A41DE767250045EF97 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012666A71DE767250045EF97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		012666AC1DE767250045EF97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,16 +96,16 @@
 		012666E11DE798B10045EF97 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		012666E31DE79BCA0045EF97 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		012666E51DE79E8B0045EF97 /* StartupService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupService.swift; sourceTree = "<group>"; };
-		012666E71DE832420045EF97 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		012666E71DE832420045EF97 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		012666E91DE832900045EF97 /* SocketListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketListener.swift; sourceTree = "<group>"; };
-		012666EB1DE833360045EF97 /* SocketRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketRequests.swift; sourceTree = "<group>"; };
+		012666EB1DE833360045EF97 /* Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		012666EE1DE833CE0045EF97 /* Tick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tick.swift; sourceTree = "<group>"; };
-		012666F31DE834A30045EF97 /* SubscriptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
-		012666F61DE835070045EF97 /* SocketResponses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketResponses.swift; sourceTree = "<group>"; };
+		012666F31DE834A30045EF97 /* TicksListeningService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicksListeningService.swift; sourceTree = "<group>"; };
+		012666F61DE835070045EF97 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		012666FA1DE835EF0045EF97 /* ResponseParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParsers.swift; sourceTree = "<group>"; };
 		012666FC1DE87F900045EF97 /* TicksParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicksParser.swift; sourceTree = "<group>"; };
 		012667001DE890A00045EF97 /* TickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickCell.swift; path = ../TickCell.swift; sourceTree = "<group>"; };
-		012667021DE8938A0045EF97 /* QuotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesController.swift; sourceTree = "<group>"; };
+		012667021DE8938A0045EF97 /* TicksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicksController.swift; sourceTree = "<group>"; };
 		012667041DE89F890045EF97 /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
 		012667081DE8A41E0045EF97 /* SymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +137,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011DC5EF1DEB898F0092BDCA /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				011DC6001DECEE390092BDCA /* Delayer.swift */,
+				011DC5FC1DECD9180092BDCA /* Throttler.swift */,
+				011DC5F01DEB89B20092BDCA /* ScrollableGraphView.swift */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		011DC5F61DEC43E30092BDCA /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				012666E71DE832420045EF97 /* Socket.swift */,
+				012666EB1DE833360045EF97 /* Requests.swift */,
+				012666F61DE835070045EF97 /* Responses.swift */,
+				012666E91DE832900045EF97 /* SocketListener.swift */,
+				011DC5F71DEC452A0092BDCA /* Host.swift */,
+			);
+			name = Socket;
+			sourceTree = "<group>";
+		};
+		011DC5F91DEC49910092BDCA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				012666B01DE767250045EF97 /* LaunchScreen.storyboard */,
+				012666AB1DE767250045EF97 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		0126669B1DE767250045EF97 = {
 			isa = PBXGroup;
 			children = (
@@ -152,14 +193,14 @@
 		012666A61DE767250045EF97 /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				011DC5EF1DEB898F0092BDCA /* Third Party */,
 				012666F01DE8340E0045EF97 /* Services */,
 				012666ED1DE833530045EF97 /* Network */,
 				012666DB1DE77C230045EF97 /* Models */,
 				012667061DE8A3CB0045EF97 /* Controllers */,
 				012667071DE8A3EA0045EF97 /* Cells */,
+				011DC5F91DEC49910092BDCA /* UI */,
 				012666A71DE767250045EF97 /* AppDelegate.swift */,
-				012666AB1DE767250045EF97 /* Main.storyboard */,
-				012666B01DE767250045EF97 /* LaunchScreen.storyboard */,
 				012666AE1DE767250045EF97 /* Assets.xcassets */,
 				012666B31DE767250045EF97 /* Info.plist */,
 			);
@@ -196,11 +237,8 @@
 		012666ED1DE833530045EF97 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				011DC5F61DEC43E30092BDCA /* Socket */,
 				012666F91DE835CE0045EF97 /* Parsers */,
-				012666EB1DE833360045EF97 /* SocketRequests.swift */,
-				012666E91DE832900045EF97 /* SocketListener.swift */,
-				012666E71DE832420045EF97 /* SocketManager.swift */,
-				012666F61DE835070045EF97 /* SocketResponses.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -210,7 +248,7 @@
 			children = (
 				012666E51DE79E8B0045EF97 /* StartupService.swift */,
 				012666E31DE79BCA0045EF97 /* StorageService.swift */,
-				012666F31DE834A30045EF97 /* SubscriptionService.swift */,
+				012666F31DE834A30045EF97 /* TicksListeningService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -228,8 +266,9 @@
 			isa = PBXGroup;
 			children = (
 				012667041DE89F890045EF97 /* StartupController.swift */,
-				012667021DE8938A0045EF97 /* QuotesController.swift */,
+				012667021DE8938A0045EF97 /* TicksController.swift */,
 				012666E11DE798B10045EF97 /* SettingsController.swift */,
+				011DC5F41DEB8C7E0092BDCA /* GraphController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -379,22 +418,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011DC6011DECEE390092BDCA /* Delayer.swift in Sources */,
 				012666EF1DE833CE0045EF97 /* Tick.swift in Sources */,
-				012666F41DE834A30045EF97 /* SubscriptionService.swift in Sources */,
+				012666F41DE834A30045EF97 /* TicksListeningService.swift in Sources */,
+				011DC5FD1DECD9180092BDCA /* Throttler.swift in Sources */,
+				011DC5F81DEC452A0092BDCA /* Host.swift in Sources */,
 				012666E21DE798B10045EF97 /* SettingsController.swift in Sources */,
-				012666EC1DE833360045EF97 /* SocketRequests.swift in Sources */,
+				012666EC1DE833360045EF97 /* Requests.swift in Sources */,
 				012666FD1DE87F910045EF97 /* TicksParser.swift in Sources */,
-				012667031DE8938A0045EF97 /* QuotesController.swift in Sources */,
-				012666E81DE832420045EF97 /* SocketManager.swift in Sources */,
+				012667031DE8938A0045EF97 /* TicksController.swift in Sources */,
+				012666E81DE832420045EF97 /* Socket.swift in Sources */,
 				012667051DE89F890045EF97 /* StartupController.swift in Sources */,
 				012666DD1DE77C4B0045EF97 /* Symbol.swift in Sources */,
 				012666E61DE79E8B0045EF97 /* StartupService.swift in Sources */,
 				012667011DE890A00045EF97 /* TickCell.swift in Sources */,
 				012666A81DE767250045EF97 /* AppDelegate.swift in Sources */,
 				012667091DE8A41E0045EF97 /* SymbolCell.swift in Sources */,
-				012666F71DE835070045EF97 /* SocketResponses.swift in Sources */,
+				012666F71DE835070045EF97 /* Responses.swift in Sources */,
 				012666FB1DE835EF0045EF97 /* ResponseParsers.swift in Sources */,
 				012666E41DE79BCA0045EF97 /* StorageService.swift in Sources */,
+				011DC5F11DEB89B20092BDCA /* ScrollableGraphView.swift in Sources */,
+				011DC5F51DEB8C7E0092BDCA /* GraphController.swift in Sources */,
 				012666EA1DE832900045EF97 /* SocketListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

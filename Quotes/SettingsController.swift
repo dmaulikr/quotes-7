@@ -1,26 +1,14 @@
-//
-//  SettingsController.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import UIKit
 
 
 class SettingsController: UITableViewController {
     
-    // MARK - State
+    // MARK - State    
+    let storageService = StorageService()
     var data = Symbol.all
     
-    // MARK: - View life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        clearsSelectionOnViewWillAppear = false
-    }
     
+    // MARK: - View life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -40,19 +28,23 @@ class SettingsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SymbolCell.reuseId, for: indexPath) as! SymbolCell
         
-        cell.setData(SymbolCellData(for: data[indexPath.row]))
+        let symbol = data[indexPath.row]
+        let active = storageService.isSymbolActive(symbol)
+        cell.setData(SymbolCellData(symbol: symbol.description, active: active))
+        
         return cell
     }
+    
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let symbol = data[indexPath.row]
-        let active = StorageService.activeSymbols().contains(symbol)
-        StorageService.storeSymbolActive(!active, for: symbol)
+        let active = storageService.isSymbolActive(symbol)
+        storageService.storeSymbolActive(!active, for: symbol)
         
         if let cell = tableView.cellForRow(at: indexPath) {
             if let  cell = cell as? SymbolCell {
-                cell.setData(SymbolCellData(for: symbol))
+                cell.setData(SymbolCellData(symbol: symbol.description, active: !active))
             }
         }
     }

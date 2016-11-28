@@ -1,19 +1,18 @@
-//
-//  SubscriptionService.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
 
-enum SubscriptionServiceError: Error {
+
+enum TicksListeningServiceError: Error {
     case notConnected
 }
 
-class SubscriptionService: SocketListener {
-    weak var manager: SocketManager?
+/* 
+    TicksListeningService notifies about ticks via `onTicks` callback.
+    To start listening ticks call `subscribe` method.
+*/
+class TicksListeningService: SocketListener {
+    weak var socket: Socket?
+    var ticksParser = TicksParser()
+    
     var status: SocketListenerStatus = .wait {
         didSet {
             statusChangeHandler?(status)
@@ -24,7 +23,7 @@ class SubscriptionService: SocketListener {
     var statusChangeHandler: ((SocketListenerStatus) -> ())?
     
     func socketDidReceivedMessage(message: String) {
-        if let ticks = TicksParser.parse(message) {
+        if let ticks = ticksParser.parse(message) {
             ticksHandler?(ticks)
         }
     }
@@ -38,20 +37,20 @@ class SubscriptionService: SocketListener {
     }
     
     func subscribe(to symbols: [Symbol], completion: ((Error?) -> ())? = nil) {
-        guard manager?.isConnected ?? false else {
-            completion?(SubscriptionServiceError.notConnected)
+        guard socket?.isConnected ?? false else {
+            completion?(TicksListeningServiceError.notConnected)
             return
         }
-        manager?.send(request: SubscribeRequest(to: symbols))
+        socket?.send(request: SubscribeRequest(to: symbols))
         completion?(nil)
     }
     
     func unsubscribe(from symbols: [Symbol], completion: ((Error?) -> ())? = nil) {
-        guard manager?.isConnected ?? false else {
-            completion?(SubscriptionServiceError.notConnected)
+        guard socket?.isConnected ?? false else {
+            completion?(TicksListeningServiceError.notConnected)
             return
         }
-        manager?.send(request: UnsubscribeRequest(from: symbols))
+        socket?.send(request: UnsubscribeRequest(from: symbols))
         completion?(nil)
     }
 }

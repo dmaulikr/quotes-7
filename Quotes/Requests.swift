@@ -1,13 +1,9 @@
-//
-//  SocketRequests.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
 
+
+/* 
+    Structs for assembling requests to socket.
+*/
 struct SubscribeRequest: CustomStringConvertible {
     let symbols: [Symbol]
     init(to symbols: [Symbol]) {

@@ -1,30 +1,30 @@
-//
-//  StartupService.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
 
-class StartupService {
 
-    static func run() {
-        if StorageService.firstRun() {
-            storeActiveSymbols()
+/* 
+    StartupService is suitable for runing tasks on application launch.
+*/
+class StartupService {
+    
+    let storageService = StorageService()
+    
+    func run() {
+        if storageService.isFirstLaunch() {
+            initActiveSymbols()
         }
+        
         connectToSocket()
     }
     
-    static func storeActiveSymbols() {
+    
+    private func initActiveSymbols() {
         for (idx, symbol) in Symbol.all.enumerated() {
-            StorageService.storeSymbolActive(true, for: symbol)
-            StorageService.storeOrder(idx, for: symbol)
+            storageService.storeSymbolActive(true, for: symbol)
+            storageService.storeOrder(idx, for: symbol)
         }
     }
     
-    static func connectToSocket() {
-        SocketManager.instance.connect()
+    private func connectToSocket() {
+        Socket.instance.connect()
     }
 }

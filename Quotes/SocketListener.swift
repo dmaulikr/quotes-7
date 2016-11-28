@@ -1,58 +1,49 @@
-//
-//  SocketListener.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
+
 
 enum SocketListenerStatus {
     case wait, active
 }
 
-/* Sub for SocketManager */
+
+/* 
+    Sub for Socket.
+*/
 protocol SocketListener: class {
-    weak var manager: SocketManager? { get set }
+    weak var socket: Socket? { get set }
     var status: SocketListenerStatus { get set }
     var id: String { get }
     
+    func socketDidConnected()
+    func socketDidDisconnected(error: Error?)
     func socketDidReceivedMessage(message: String)
     
-    func managerDidConnected()
-    func managerDidDisconnected(error: Error?)
-    
-    func startListening(manager: SocketManager)
+    func startListening(socket: Socket)
     func stopListening()
-    func restart()
 }
 
-/* Default implementation */
+
+/* 
+    Default implementation.
+*/
 extension SocketListener {
     var id: String { return UUID().uuidString }
     
-    func startListening(manager: SocketManager) {
-        self.manager = manager
-        if manager.isConnected { status = .active }
-        manager.addListener(self)
+    func startListening(socket: Socket) {
+        self.socket = socket
+        if socket.isConnected { status = .active }
+        socket.addListener(self)
     }
     func stopListening() {
-        manager?.removeListener(self)
+        socket?.removeListener(self)
         status = .wait
-        manager = nil
+        socket = nil
     }
-    func restart() {
-        if let manager = self.manager {
-            stopListening()
-            startListening(manager: manager)
-        }
-    }
-    
-    func managerDidConnected() {
+
+    func socketDidConnected() {
         status = .active
     }
-    func managerDidDisconnected(error: Error?) {
+    func socketDidDisconnected(error: Error?) {
         status = .wait
     }
 }

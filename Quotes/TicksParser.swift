@@ -1,16 +1,13 @@
-//
-//  TicksParser.swift
-//  Quotes
-//
-//  Created by Цопин Роман on 25/11/2016.
-//  Copyright © 2016 Цопин Роман. All rights reserved.
-//
-
 import Foundation
 import Unbox
 
+
+/* 
+    TicksParser parses socket reponses using response parsers and tries to find any ticks data.
+*/
 class TicksParser {
-    static func parse(_ message: String) -> [Tick]? {
+    
+    func parse(_ message: String) -> [Tick]? {
         let data = message.data(using: .utf8)
         if let subscribeResponse: SubscribeResponse = try? unbox(data: data!) {
             return subscribeResponse.ticksResponse.ticks
@@ -22,4 +19,5 @@ class TicksParser {
             return nil
         }
     }
+    
 }
