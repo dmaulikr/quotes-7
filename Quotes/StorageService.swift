@@ -32,6 +32,7 @@ class StorageService {
         for (index, symbol) in symbols.enumerated() {
             storeOrder(order[index], for: symbol)
         }
+        sync()
     }
     
     func isSymbolActive(_ symbol: Symbol) -> Bool {
@@ -40,6 +41,7 @@ class StorageService {
     
     func storeSymbolActive(_ active: Bool, for symbol: Symbol) {
         UserDefaults.standard.set(active, forKey: activeSymbolKey(symbol))
+        sync()
     }
     
     func lastTick(for symbol: Symbol) -> Tick {
@@ -53,6 +55,7 @@ class StorageService {
         storeLastAsk(tick.ask, for: tick.symbol)
         storeLastBid(tick.bid, for: tick.symbol)
         storeLastSpread(tick.spread, for: tick.symbol)
+        sync()
     }
     
     func storeLastAsk(_ value: Double, for symbol: Symbol) {
@@ -80,8 +83,15 @@ class StorageService {
     }
     
     func isFirstLaunch() -> Bool {
-        defer { UserDefaults.standard.set(true, forKey: firstRunKey) }
+        defer {
+            UserDefaults.standard.set(true, forKey: firstRunKey)
+            UserDefaults.standard.synchronize()
+        }
         return !UserDefaults.standard.bool(forKey: firstRunKey)
+    }
+    
+    func sync() {
+        UserDefaults.standard.synchronize()
     }
     
     private func lastAskKey(_ symbol: Symbol) -> String {

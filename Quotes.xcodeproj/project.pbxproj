@@ -32,10 +32,10 @@
 		012666F71DE835070045EF97 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666F61DE835070045EF97 /* Responses.swift */; };
 		012666FB1DE835EF0045EF97 /* ResponseParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666FA1DE835EF0045EF97 /* ResponseParsers.swift */; };
 		012666FD1DE87F910045EF97 /* TicksParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666FC1DE87F900045EF97 /* TicksParser.swift */; };
-		012667011DE890A00045EF97 /* TickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667001DE890A00045EF97 /* TickCell.swift */; };
 		012667031DE8938A0045EF97 /* TicksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667021DE8938A0045EF97 /* TicksController.swift */; };
 		012667051DE89F890045EF97 /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667041DE89F890045EF97 /* StartupController.swift */; };
 		012667091DE8A41E0045EF97 /* SymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012667081DE8A41E0045EF97 /* SymbolCell.swift */; };
+		01EC156C1DED97EC00DA151A /* TickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC156B1DED97EC00DA151A /* TickCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,10 +100,10 @@
 		012666F61DE835070045EF97 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		012666FA1DE835EF0045EF97 /* ResponseParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParsers.swift; sourceTree = "<group>"; };
 		012666FC1DE87F900045EF97 /* TicksParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicksParser.swift; sourceTree = "<group>"; };
-		012667001DE890A00045EF97 /* TickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TickCell.swift; path = ../TickCell.swift; sourceTree = "<group>"; };
 		012667021DE8938A0045EF97 /* TicksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicksController.swift; sourceTree = "<group>"; };
 		012667041DE89F890045EF97 /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
 		012667081DE8A41E0045EF97 /* SymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCell.swift; sourceTree = "<group>"; };
+		01EC156B1DED97EC00DA151A /* TickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +270,7 @@
 		012667071DE8A3EA0045EF97 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				012667001DE890A00045EF97 /* TickCell.swift */,
+				01EC156B1DED97EC00DA151A /* TickCell.swift */,
 				012667081DE8A41E0045EF97 /* SymbolCell.swift */,
 			);
 			name = Cells;
@@ -416,6 +416,7 @@
 				012666F41DE834A30045EF97 /* TicksListeningService.swift in Sources */,
 				011DC5F81DEC452A0092BDCA /* Host.swift in Sources */,
 				012666E21DE798B10045EF97 /* SettingsController.swift in Sources */,
+				01EC156C1DED97EC00DA151A /* TickCell.swift in Sources */,
 				012666EC1DE833360045EF97 /* Requests.swift in Sources */,
 				012666FD1DE87F910045EF97 /* TicksParser.swift in Sources */,
 				012667031DE8938A0045EF97 /* TicksController.swift in Sources */,
@@ -423,7 +424,6 @@
 				012667051DE89F890045EF97 /* StartupController.swift in Sources */,
 				012666DD1DE77C4B0045EF97 /* Symbol.swift in Sources */,
 				012666E61DE79E8B0045EF97 /* StartupService.swift in Sources */,
-				012667011DE890A00045EF97 /* TickCell.swift in Sources */,
 				012666A81DE767250045EF97 /* AppDelegate.swift in Sources */,
 				012667091DE8A41E0045EF97 /* SymbolCell.swift in Sources */,
 				012666F71DE835070045EF97 /* Responses.swift in Sources */,
