@@ -3,10 +3,12 @@ import UIKit
 class TicksController: UITableViewController {
     
     // MARK - State
-    let ticksListeningService = TicksListeningService()
-    let storageService = StorageService()
     
+    /* Ticks displayed in tableView */
     var data = [Tick]()
+    
+    private let ticksListeningService = TicksListeningService()
+    private let storageService = StorageService()
     
     
     // MARK: - View life cycle
@@ -22,6 +24,7 @@ class TicksController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        /* Init ticks from storage */
         data = storageService.lastTicks(for: storageService.activeSymbols())
         tableView.reloadData()
         
@@ -41,7 +44,7 @@ class TicksController: UITableViewController {
         ticksListeningService.onStatusChange { [weak self] status in
             if status == .active {
                 if let `self` = self {
-                    
+
                     let activeSymbols = self.storageService.activeSymbols()
                     let inactiveSymbols = Symbol.all.filter { !activeSymbols.contains($0) }
                     
@@ -131,8 +134,6 @@ class TicksController: UITableViewController {
         storageService.storeOrder(storageService.order(for: symbols).sorted(), for: symbols)
 
     }
-
-    
 }
 
 /* 

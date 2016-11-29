@@ -10,21 +10,16 @@ enum TicksListeningServiceError: Error {
     To start listening ticks call `subscribe` method.
 */
 class TicksListeningService: SocketListener {
+    
     weak var socket: Socket?
-    var ticksParser = TicksParser()
+    
+    private var ticksParser = TicksParser()
+    private var ticksHandler: (([Tick]) -> ())?
+    private var statusChangeHandler: ((SocketListenerStatus) -> ())?
     
     var status: SocketListenerStatus = .wait {
         didSet {
             statusChangeHandler?(status)
-        }
-    }
-    
-    var ticksHandler: (([Tick]) -> ())?
-    var statusChangeHandler: ((SocketListenerStatus) -> ())?
-    
-    func socketDidReceivedMessage(message: String) {
-        if let ticks = ticksParser.parse(message) {
-            ticksHandler?(ticks)
         }
     }
     
@@ -52,5 +47,11 @@ class TicksListeningService: SocketListener {
         }
         socket?.send(request: UnsubscribeRequest(from: symbols))
         completion?(nil)
+    }
+    
+    func socketDidReceivedMessage(message: String) {
+        if let ticks = ticksParser.parse(message) {
+            ticksHandler?(ticks)
+        }
     }
 }

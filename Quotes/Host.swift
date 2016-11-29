@@ -2,7 +2,7 @@ import Foundation
 
 
 /*
-    Host is suitable for host switching.
+    Host is suitable as central point for host switching.
 */
 enum Host: String {
     case production = "wss://quotes.exness.com:18400/"

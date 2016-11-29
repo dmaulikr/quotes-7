@@ -2,9 +2,10 @@ import Foundation
 
 
 /* 
-    StorageService implements simple redis-like key-value storage based on UserDefaults. 
+    StorageService implements simple `redis-like` key-value storage, based on UserDefaults.
 */
 class StorageService {
+    
     func activeSymbols() -> [Symbol] {
         return Symbol.all.filter { UserDefaults.standard.bool(forKey: activeSymbolKey($0)) }.sorted(by: {
             order(for: $0) < order(for: $1)
@@ -83,22 +84,23 @@ class StorageService {
         return !UserDefaults.standard.bool(forKey: firstRunKey)
     }
     
-    func lastAskKey(_ symbol: Symbol) -> String {
+    private func lastAskKey(_ symbol: Symbol) -> String {
         return "\(symbol.rawValue)-lastAsk"
     }
     
-    func lastBidKey(_ symbol: Symbol) -> String {
+    private func lastBidKey(_ symbol: Symbol) -> String {
         return "\(symbol.rawValue)-lastBid"
     }
     
-    func lastSpreadKey(_ symbol: Symbol) -> String {
+    private func lastSpreadKey(_ symbol: Symbol) -> String {
         return "\(symbol.rawValue)-lastSpread"
     }
     
-    func activeSymbolKey(_ symbol: Symbol) -> String {
+    private func activeSymbolKey(_ symbol: Symbol) -> String {
         return "\(symbol.rawValue)-active"
     }
-    func symbolOrderKey(_ symbol: Symbol) -> String {
+    
+    private func symbolOrderKey(_ symbol: Symbol) -> String {
         return "\(symbol.rawValue)-order"
     }
     

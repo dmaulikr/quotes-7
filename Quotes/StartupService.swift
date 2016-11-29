@@ -2,11 +2,11 @@ import Foundation
 
 
 /* 
-    StartupService is suitable for runing tasks on application launch.
+    StartupService runs tasks on launch.
 */
 class StartupService {
     
-    let storageService = StorageService()
+    private let storageService = StorageService()
     
     func run() {
         if storageService.isFirstLaunch() {
@@ -16,11 +16,10 @@ class StartupService {
         connectToSocket()
     }
     
-    
     private func initActiveSymbols() {
-        for (idx, symbol) in Symbol.all.enumerated() {
+        for (order, symbol) in Symbol.all.enumerated() {
             storageService.storeSymbolActive(true, for: symbol)
-            storageService.storeOrder(idx, for: symbol)
+            storageService.storeOrder(order, for: symbol)
         }
     }
     

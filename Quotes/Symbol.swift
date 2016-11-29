@@ -1,7 +1,9 @@
 import Foundation
 import Unbox
 
-
+/* 
+    Symbols, which are available in application.
+*/
 public enum Symbol: String, CustomStringConvertible, UnboxableEnum {
     case EURUSD, EURGBP, USDJPY, GBPUSD, USDCHF, USDCAD, AUDUSD, EURJPY, EURCHF
     static let all: [Symbol] = [.EURUSD, .EURGBP, .USDJPY, .GBPUSD, .USDCHF, .USDCAD, .AUDUSD, .EURJPY, .EURCHF]

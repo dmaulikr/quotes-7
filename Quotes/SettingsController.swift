@@ -3,9 +3,12 @@ import UIKit
 
 class SettingsController: UITableViewController {
     
-    // MARK - State    
-    let storageService = StorageService()
+    // MARK - State
+    
+    // Symbols, which are available for activation / deactivation
     var data = Symbol.all
+    
+    private let storageService = StorageService()
     
     
     // MARK: - View life cycle

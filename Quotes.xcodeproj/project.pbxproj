@@ -10,8 +10,6 @@
 		011DC5F11DEB89B20092BDCA /* ScrollableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5F01DEB89B20092BDCA /* ScrollableGraphView.swift */; };
 		011DC5F51DEB8C7E0092BDCA /* GraphController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5F41DEB8C7E0092BDCA /* GraphController.swift */; };
 		011DC5F81DEC452A0092BDCA /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5F71DEC452A0092BDCA /* Host.swift */; };
-		011DC5FD1DECD9180092BDCA /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC5FC1DECD9180092BDCA /* Throttler.swift */; };
-		011DC6011DECEE390092BDCA /* Delayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DC6001DECEE390092BDCA /* Delayer.swift */; };
 		012666A81DE767250045EF97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012666A71DE767250045EF97 /* AppDelegate.swift */; };
 		012666AD1DE767250045EF97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012666AB1DE767250045EF97 /* Main.storyboard */; };
 		012666AF1DE767250045EF97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012666AE1DE767250045EF97 /* Assets.xcassets */; };
@@ -76,8 +74,6 @@
 		011DC5F01DEB89B20092BDCA /* ScrollableGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableGraphView.swift; sourceTree = "<group>"; };
 		011DC5F41DEB8C7E0092BDCA /* GraphController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphController.swift; sourceTree = "<group>"; };
 		011DC5F71DEC452A0092BDCA /* Host.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
-		011DC5FC1DECD9180092BDCA /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
-		011DC6001DECEE390092BDCA /* Delayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delayer.swift; sourceTree = "<group>"; };
 		012666A41DE767250045EF97 /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012666A71DE767250045EF97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		012666AC1DE767250045EF97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,8 +136,6 @@
 		011DC5EF1DEB898F0092BDCA /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
-				011DC6001DECEE390092BDCA /* Delayer.swift */,
-				011DC5FC1DECD9180092BDCA /* Throttler.swift */,
 				011DC5F01DEB89B20092BDCA /* ScrollableGraphView.swift */,
 			);
 			name = "Third Party";
@@ -418,10 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				011DC6011DECEE390092BDCA /* Delayer.swift in Sources */,
 				012666EF1DE833CE0045EF97 /* Tick.swift in Sources */,
 				012666F41DE834A30045EF97 /* TicksListeningService.swift in Sources */,
-				011DC5FD1DECD9180092BDCA /* Throttler.swift in Sources */,
 				011DC5F81DEC452A0092BDCA /* Host.swift in Sources */,
 				012666E21DE798B10045EF97 /* SettingsController.swift in Sources */,
 				012666EC1DE833360045EF97 /* Requests.swift in Sources */,

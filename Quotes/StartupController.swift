@@ -2,15 +2,17 @@ import UIKit
 
 
 /* 
-    Synchronization point. Suitable for resource initialization and running conditional screens (e.g. App Tour or Auth screens).
+    Synchronization point. Suitable for any initialization and running conditional screens (e.g. App Tour or Auth screens).
 */
 class StartupController: UIViewController {
-    let startupService = StartupService()
+    
+    private let startupService = StartupService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         startupService.run()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

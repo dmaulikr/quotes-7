@@ -2,7 +2,7 @@ import Starscream
 
 
 /* 
-    Wrapper class for Starscream socket with added Pub/Sub functionality 
+    Socket is wrapper class for Starscream WebSocket with added Pub/Sub functionality.
 */
 class Socket: WebSocketDelegate {
     
@@ -16,6 +16,7 @@ class Socket: WebSocketDelegate {
     func addListener(_ listener: SocketListener) {
         listeners.append(listener)
     }
+    
     func removeListener(_ listener: SocketListener) {
         listeners = listeners.filter { $0.id == listener.id }
     }
